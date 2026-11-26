@@ -3,8 +3,11 @@
 
 class Menu:
 
-    def __init__(self):
-        self.Window: Surface = None
+    def __init__(self, window):
+        self.Window = window
 
     def rum(self):
+        pass
+
+    def run(self):
         pass
