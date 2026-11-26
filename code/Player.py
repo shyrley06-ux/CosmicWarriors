@@ -1,12 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from Entity import Entity
+from code.Entity import Entity
 
 
 class Player(Entity):
 
     def __init__(self):
+        super().__init__()
         self.lives: int = None
         self.score: int = None
 
