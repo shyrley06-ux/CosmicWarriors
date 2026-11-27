@@ -1,10 +1,11 @@
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 from code.Entity import Entity
 
 
-class Enemy(Entity, Entity):
+class Enemy(Entity):
 
     def __init__(self):
         super().__init__()

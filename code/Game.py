@@ -1,10 +1,12 @@
+
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import pygame
-import os
 
 from code.Menu import Menu
+from code.Level import Level
 
 
 class Game:
@@ -13,10 +15,16 @@ class Game:
         pygame.init()
         pygame.mixer.init()
 
-        self.window = pygame.display.set_mode(size=(800, 600))
+        self.window = pygame.display.set_mode(
+            size=(800, 600)
+        )
+
         pygame.display.set_caption("Cosmic Warriors")
 
-        pygame.mixer.music.load("assets/audio/8bit-spaceshooter.mp3")
+        pygame.mixer.music.load(
+            "assets/audio/8bit-spaceshooter.mp3"
+        )
+
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1)
 
@@ -24,13 +32,18 @@ class Game:
         menu = Menu(self.window)
 
         while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
+            action = menu.run()
+
+            if action == "EXIT":
+                pygame.quit()
+                return
+
+            elif action == "NEW GAME":
+                level = Level(self.window)
+                result = level.run()
+
+                if result == "EXIT":
                     return
-            menu.run()
 
-
-
-
-
+            elif action == "SCORE":
+                print("SCORE selecionado!")
