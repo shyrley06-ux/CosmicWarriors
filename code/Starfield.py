@@ -16,7 +16,7 @@ class Starfield:
 
         # Carregar o fundo da partida
         self.background = pygame.image.load(
-            "assets/images/Blue_Nebula_08-512x512.png"
+            "assets/images/Purple_Nebula_06-512x512.png"
         ).convert()
 
         self.background = pygame.transform.scale(

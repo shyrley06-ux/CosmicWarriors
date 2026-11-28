@@ -28,6 +28,7 @@ class Game:
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1)
 
+
     def run(self):
         menu = Menu(self.window)
 
@@ -35,15 +36,24 @@ class Game:
             action = menu.run()
 
             if action == "EXIT":
-                pygame.quit()
-                return
+                break
 
             elif action == "NEW GAME":
                 level = Level(self.window)
                 result = level.run()
 
                 if result == "EXIT":
-                    return
+                    break
+                elif result == "GAME OVER":
+                    print("GAME OVER")
+                elif result == "NEXT LEVEL":
+                    print("Parabéns! Próximo nível")
+                elif result == "YOU WIN":
+                    print("Você venceu!")
 
             elif action == "SCORE":
                 print("SCORE selecionado!")
+
+        pygame.quit()
+
+

@@ -12,7 +12,7 @@ class Background(Entity):
         self.window = window
 
         self.surf = pygame.image.load(
-            "assets/images/Blue_Nebula_04-512x512.png"
+            "assets/images/Purple_Nebula_07-512x512.png"
         ).convert()
         self.surf = pygame.transform.scale(
             self.surf, (800, 600)
